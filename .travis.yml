@@ -10,3 +10,5 @@ before_install:
   - pip install -U pytest
   - pip install codecov
 script: pytest SimpleTest.py
+after_success:
+  - codecov
