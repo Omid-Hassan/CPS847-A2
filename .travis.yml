@@ -9,6 +9,6 @@ before_install:
   - pip install -U pip
   - pip install -U pytest
   - pip install codecov
-script: pytest SimpleTest.py
+script: pytest SimpleTest.py --cov-report term --cov=app/test/
 after_success:
   - codecov
