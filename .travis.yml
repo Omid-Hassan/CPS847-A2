@@ -8,7 +8,7 @@ before_install:
   - python --version
   - pip install -U pip
   - pip install -U pytest
-  - pip install codecov
-script: pytest SimpleTest.py --cov-report term --cov=app/test/
+  - pip install coverge
+script: coverage run -m pytest SimpleTest.py
 after_success:
   - codecov
