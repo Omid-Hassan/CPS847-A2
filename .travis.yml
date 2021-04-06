@@ -9,6 +9,6 @@ before_install:
   - pip install -U pip
   - pip install -U pytest
   - pip install coverge
-script: coverage run -m pytest SimpleTest.py
+script: coverage run -m unittest SimpleTest.py
 after_success:
-  - codecov
+  bash <(curl -s https://codecov.io/bash)
