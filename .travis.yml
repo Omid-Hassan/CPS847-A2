@@ -8,7 +8,7 @@ before_install:
   - python --version
   - pip install -U pip
   - pip install -U pytest
-  - pip install -U coverge
+  - pip install codecov
 script: coverage run -m unittest SimpleTest.py
 after_success:
   bash <(curl -s https://codecov.io/bash)
