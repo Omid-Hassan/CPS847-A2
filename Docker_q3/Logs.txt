@@ -1,0 +1,23 @@
+PS C:\Users\James\CPS847_REPO\Docker_q3> docker build -t webpage-image:0.1 .
+[+] Building 11.8s (8/8) FINISHED
+ => [internal] load build definition from Dockerfile                                                                         0.1s
+ => => transferring dockerfile: 31B                                                                                          0.0s
+ => [internal] load .dockerignore                                                                                            0.0s
+ => => transferring context: 2B                                                                                              0.0s
+ => [internal] load metadata for docker.io/library/nginx:alpine                                                             11.2s
+ => [auth] library/nginx:pull token for registry-1.docker.io                                                                 0.0s
+ => [internal] load build context                                                                                            0.1s
+ => => transferring context: 943B                                                                                            0.0s
+ => CACHED [1/2] FROM docker.io/library/nginx:alpine@sha256:d942e5263869b00ed3174fb76573165dc89e391bfafa43e9134a9c6e0bf0ec8  0.0s
+ => [2/2] COPY . /usr/share/nginx/html                                                                                       0.1s
+ => exporting to image                                                                                                       0.1s
+ => => exporting layers                                                                                                      0.1s
+ => => writing image sha256:3724ca17a5da970d45de4790baae6f2ec41d2f31484a70576588414270f13c3e                                 0.0s
+ => => naming to docker.io/library/webpage-image:0.1
+
+PS C:\Users\James\CPS847_REPO\Docker_q3> docker run -d -p 80:80 webpage-image:0.1
+5f0d2c483e16a999de78d1d7856a1b597fe162ff58ac2067de505fe44b8f5f51
+
+PS C:\Users\James\CPS847_REPO\Docker_q3> docker ps -a
+CONTAINER ID   IMAGE               COMMAND                  CREATED         STATUS         PORTS                NAMES
+5f0d2c483e16   webpage-image:0.1   "/docker-entrypoint.…"   6 minutes ago   Up 4 minutes   0.0.0.0:80->80/tcp   serene_dijkstra
