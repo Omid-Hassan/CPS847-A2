@@ -4,22 +4,22 @@ services:
 - docker
 
 script:
-- docker image build -t kazirys21/dockertest1 .
+- docker image build -t webpage-q4-image .
 
 after_success:
   #log in to docker CLI
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   #take built images and push to DOcker hub
-  - docker push kazirys21/dockertest1
+  - docker push webpage-q4-image
   #test
 
-deploy:
-  provider: elasticbeanstalk
-  region: "us-east-1"
-  app: "dtest"
-  env: "Dtest-env"
-  bucket_name: "elasticbeanstalk-us-east-1"
-  on:
-    branch: master
-  access_key_id: $AWS_ACCESS_KEY
-  secret_access_key: $AWS_SECRET_KEY
+#deploy:
+#  provider: elasticbeanstalk
+#  region: "us-east-1"
+#  app: "dtest"
+#  env: "Dtest-env"
+#  bucket_name: "elasticbeanstalk-us-east-1"
+#  on:
+#    branch: master
+#  access_key_id: $AWS_ACCESS_KEY
+#  secret_access_key: $AWS_SECRET_KEY
