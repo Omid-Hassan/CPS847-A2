@@ -14,13 +14,13 @@ after_success:
   - docker push destire/dockerq4
   #test
 
-#deploy:
-#  provider: elasticbeanstalk
-#  region: "us-east-1"
-#  app: "dtest"
-#  env: "Dtest-env"
-#  bucket_name: "elasticbeanstalk-us-east-1"
-#  on:
-#    branch: master
-#  access_key_id: $AWS_ACCESS_KEY
-#  secret_access_key: $AWS_SECRET_KEY
+deploy:
+  provider: elasticbeanstalk
+  region: "us-east-1"
+  app: "dtest"
+  env: "Dtest-env"
+  bucket_name: "elasticbeanstalk-us-east-2-047340625628"
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_SECRET_KEY
