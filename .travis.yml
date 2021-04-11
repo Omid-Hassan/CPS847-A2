@@ -5,7 +5,7 @@ services:
 - docker
 
 script:
-- docker image build -t webpage-q4-image ./Docker_AWS_q4
+- docker image build -t destire/dockerq4 ./Docker_AWS_q4
 
 after_success:
   #log in to docker CLI
